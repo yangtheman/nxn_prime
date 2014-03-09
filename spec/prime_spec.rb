@@ -6,14 +6,15 @@ describe Prime do
   it { should respond_to(:numbers) }
   
   describe ".new" do
-    it "should raise an error if given argument is less than 1" do
-      expect { Prime.new(0) }.to raise_error(/Should be initiated with 1 or higher/)
-    end
-      
     it "should call find_n_primes method with 10 as argument as default" do
       Prime.any_instance.should_receive(:find_n_primes).with(10)
       Prime.new
     end
+
+    it "should call find_n_primes method with 10 as argument if given argument is less than 1" do
+      Prime.any_instance.should_receive(:find_n_primes).with(10)
+      Prime.new(0)
+    end      
     
     it "should call find_n_primes method with given count argument" do
       Prime.any_instance.should_receive(:find_n_primes).with(20)

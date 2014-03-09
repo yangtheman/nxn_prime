@@ -3,7 +3,7 @@ class Prime
   attr_reader :numbers
   
   def initialize(count=10)
-    raise "Should be initiated with 1 or higher" if count < 1
+    count = 10 if count < 1
     @numbers = [2]
     find_n_primes(count)
   end
