@@ -11,7 +11,7 @@ It also takes a number as an argument, and it will print NxN table.
 ## Sample output
 
 ```ruby
-yangtheman:~/codes/ruby/practices/nxn-prime(master)$ ruby print_prime_multi_table.rb
+$ ruby print_prime_multi_table.rb
     2   3   5   7   11  13  17  19  23  29  
 2   4   6   10  14  22  26  34  38  46  58  
 3   6   9   15  21  33  39  51  57  69  87  
@@ -24,7 +24,7 @@ yangtheman:~/codes/ruby/practices/nxn-prime(master)$ ruby print_prime_multi_tabl
 23  46  69  115 161 253 299 391 437 529 667 
 29  58  87  145 203 319 377 493 551 667 841 
 
-yangtheman:~/codes/ruby/practices/nxn-prime(master)$ ruby print_prime_multi_table.rb 15
+$ ruby print_prime_multi_table.rb 15
      2    3    5    7    11   13   17   19   23   29   31   37   41   43   47   
 2    4    6    10   14   22   26   34   38   46   58   62   74   82   86   94   
 3    6    9    15   21   33   39   51   57   69   87   93   111  123  129  141  
