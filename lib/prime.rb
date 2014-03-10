@@ -3,13 +3,14 @@ class Prime
   attr_reader :numbers
   
   def initialize(count=10)
-    count = 10 if count < 1
+    # Rather than raising an exception, default to 10 if count is less than 1
+    @count = count < 1 ? 10 : count
     @numbers = [2]
-    find_n_primes(count)
+    find_n_primes
   end
   
-  def find_n_primes(count)
-    while @numbers.size < count
+  def find_n_primes
+    while @numbers.size < @count
       @numbers << find_next_prime
     end
   end

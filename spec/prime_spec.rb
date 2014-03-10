@@ -6,23 +6,13 @@ describe Prime do
   it { should respond_to(:numbers) }
   
   describe ".new" do
-    it "should call find_n_primes method with 10 as argument as default" do
-      Prime.any_instance.should_receive(:find_n_primes).with(10)
+    it "should call find_n_primes" do
+      Prime.any_instance.should_receive(:find_n_primes)
       Prime.new
-    end
-
-    it "should call find_n_primes method with 10 as argument if given argument is less than 1" do
-      Prime.any_instance.should_receive(:find_n_primes).with(10)
-      Prime.new(0)
-    end      
-    
-    it "should call find_n_primes method with given count argument" do
-      Prime.any_instance.should_receive(:find_n_primes).with(20)
-      Prime.new(20)      
     end
     
     it "should initiate numbers instance variable with [2]" do
-      Prime.any_instance.should_receive(:find_n_primes)
+      Prime.any_instance.stub(:find_n_primes)
       prime = Prime.new
       prime.numbers.should == [2]
     end
@@ -37,6 +27,11 @@ describe Prime do
     it "should find first five prime numbers if given argument is five" do
       prime = Prime.new(5)
       prime.numbers.should == [2, 3, 5, 7, 11]
+    end
+    
+    it "should find first ten prime numbers if class was instantiated with no argument" do
+      prime = Prime.new
+      prime.numbers.size.should == 10
     end
   end
   
